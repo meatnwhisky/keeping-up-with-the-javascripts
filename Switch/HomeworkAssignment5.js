@@ -12,14 +12,12 @@ function convertToSeconds(value, label) {
   switch (label) {
     case 'second':
     case 'seconds': return value
-
     case 'minute':
     case 'minutes':
       return value * 60
     case 'hour':
     case 'hours':
       return value * 60 * 60
-
     default: console.log('input is incorrect***', label)
       return null
   }
