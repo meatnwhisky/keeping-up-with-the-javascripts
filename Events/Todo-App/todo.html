@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style type="text/css">
+    /* body {
+      background-image: url('background.png');
+      width: fit-content
+    } */
+    .list {
+      margin: auto;
+      width: 320px;
+      height: 600px;
+      border: solid 1px rgb(36, 32, 28);
+      border-radius: 30px;
+      background-color: whitesmoke;
+      padding: 10px;
+      position: relative;
+      overflow-y: scroll;
+    }
+
+    .newTaskArea,
+    .saveList {
+      border-radius: 30px;
+      margin: auto;
+      width: 90%;
+      position: absolute;
+      bottom: 15px;
+      font-family: fantasy;
+      font-style: italic;
+      overflow-x: hidden;
+      padding: 3px;
+    }
+
+    .saveList {
+      background-color: springgreen;
+      position: inherit;
+      margin: 10px auto;
+      width: 315px;
+      height: 35px;
+      font-size: 20px;
+      align-content: center;
+      font-family: fantasy;
+      font-weight: bold;
+    }
+
+    .task {
+      border-style: solid 1px black;
+      border-radius: 30px;
+      left: 3px;
+      width: 300px;
+      height: 30px;
+      background-color: whitesmoke;
+      margin: auto;
+      margin-bottom: 3px;
+      position: relative;
+      font-family: fantasy;
+      font-size: 16px;
+      overflow-x: initial;
+      padding: 3px
+    }
+
+    .done {
+      position: absolute;
+      right: 3px;
+    }
+
+    #saveTask {
+      width: 40px;
+      height: 20px;
+      font-weight: bold;
+      position: absolute;
+      right: 3px;
+    }
+
+    #tasks {
+      top: 5px;
+      height: 70%;
+      padding: 4px;
+      overflow-y: scroll;
+      top: 5px;
+      border: inset 1px;
+      background: white;
+    }
+
+    .listName {
+      font-family: fantasy;
+      padding: 6px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #userListName {
+      font-style: italic;
+      display: none;
+      height: 20px;
+      font-weight: bold;
+      border: solid 1px rgb(36, 32, 28);
+    }
+
+    *:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list" title="TODO LIST">
+    <div class='listName'>
+      <label id='defaultListName' class="listName"> - TODO - </label>
+      <textarea id='userListName' class="listName"> - TODO - </textarea>
+    </div>
+    <div id='tasks'>
+    </div>
+    <textarea id='typingArea' class='newTaskArea'>
+    </textarea>
+  </div>
+  <div id='save' class='saveList'> SAVE
+  </div>
+</body>
+<script>
+
+  // addTask.addEventListener('mouseDown', typeTask)
+  // function typeTask() {
+  //   //typing
+  // }
+
+  var id = 0
+  var singleTask = { text: '', status: true }
+  var allTasks = []
+  const list = { name: '', tasks }
+
+  var typingArea = document.getElementById('typingArea')
+  var defaultListName = document.getElementById('defaultListName')
+  var userListName = document.getElementById('userListName')
+  var saveList = document.getElementById('save')
+  // var addNewTask = document.getElementById('addTask')
+  // addNewTask.disabled = true
+  typingArea.addEventListener('keyup', doneTyping)
+  typingArea.addEventListener('keypress', (e) => {
+    console.log(e)
+    if (e.key == 'Enter') {
+      if (e.target.value && e.target.value.trim().length > 0) {
+        addTask()
+      }
+    }
+  })
+
+  defaultListName.addEventListener('mousedown', editListName)
+  defaultListName.addEventListener('mouseover', editListName)
+
+  userListName.addEventListener('keypress', (e) => {
+    if (e.key == 'Enter') {
+      defaultListName.innerText = userListName.value
+      defaultListName.style.display = 'inline'
+      userListName.style.display = 'none'
+    }
+  })
+  // saveTask.addEventListener('click', addTask)
+
+  saveList.addEventListener('mousedown', saveThisList)
+  saveList.addEventListener('mouseup', (e) => {
+    e.target.style.border = 'none'
+    e.target.style.backgroundColor = 'springgreen'
+  })
+  function doneTyping(e) {
+    //@TODO add timer!!!
+    // if (e.target.value && e.target.value.trim().length > 0) {
+    //   addNewTask.disabled = false
+    // }
+    // else { addNewTask.disabled = true }
+  }
+
+  function addTask() {
+    var tasks = document.getElementById('tasks')
+    let task = document.createElement('div')
+    task.id = id++
+    let done = document.createElement('INPUT')
+    done.setAttribute('type', 'checkbox')
+    done.checked = false
+    done.classList.add('done')
+    task.classList.add('task')
+    task.textContent = typingArea.value
+    task.appendChild(done)
+    tasks.appendChild(task).append(document.createElement('br'))
+    allTasks.push({ id: task.id, task: typingArea.value, status: done.checked })
+    typingArea.value = ''
+    // addNewTask.disabled = true
+  }
+
+  function editListName(e) {
+    if (e.type == 'mouseover') {
+      //@TODO: ADD PENCIL [edit]
+    }
+    else {
+      userListName.style.display = 'inline'
+      defaultListName.style.display = 'none'
+    }
+  }
+
+  function saveThisList(e) {
+
+    e.target.style.border = 'solid'
+    e.target.style.backgroundColor = 'seagreen'
+    var doneList = document.getElementsByClassName('done')
+    for (let i = 0; i < doneList.length; i++) {
+      const element = doneList[i].checked;
+      console.log(element)
+      allTasks[i].done = element
+    }
+    console.log(allTasks)
+
+    //@TODO: save to file json  
+    //@TODO: solve this
+    // var tasks = document.getElementById('tasks')
+    // tasks.forEach(task => {
+    //   console.log(task)
+    // });
+  }
+
+</script>
+
+</html>

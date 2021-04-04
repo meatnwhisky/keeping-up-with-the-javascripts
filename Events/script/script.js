@@ -16,7 +16,6 @@ var player = playerX
 function init() {
 
   const allTds = document.getElementsByTagName('td')
-
   for (const td of allTds) {
     td.addEventListener('mousedown', play)
     td.addEventListener('mouseup', checkWinner)
