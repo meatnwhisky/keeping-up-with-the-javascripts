@@ -11,6 +11,91 @@
       background-image: url('background.png');
       width: fit-content
     } */
+    /* login*/
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      background-color: #3a3a3a;
+    }
+
+    #main-holder {
+      width: 50%;
+      height: 70%;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      background-color: white;
+      border-radius: 7px;
+      box-shadow: 0px 0px 5px 2px black;
+    }
+
+    #login-error-msg-holder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+
+    #login-error-msg {
+      width: 23%;
+      text-align: center;
+      margin: 0;
+      padding: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #8a0000;
+      border: 1px solid #8a0000;
+      background-color: #e58f8f;
+      opacity: 0;
+    }
+
+    #error-msg-second-line {
+      display: block;
+    }
+
+    #login-form {
+      align-self: flex-start;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .login-form-field::placeholder {
+      color: #3a3a3a;
+    }
+
+    .login-form-field {
+      border: none;
+      border-bottom: 1px solid #3a3a3a;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      outline: none;
+      padding: 0px 0px 5px 5px;
+    }
+
+    #login-form-submit {
+      width: 100%;
+      padding: 7px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      background-color: #3a3a3a;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* login*/
+
     .list {
       margin: auto;
       width: 320px;
@@ -21,6 +106,15 @@
       padding: 10px;
       position: relative;
       overflow-y: scroll;
+      display: none;
+
+    }
+
+    #auth {
+      width: 400px;
+      height: 250px;
+      background-color: springgreen;
+      position: relative;
     }
 
     .newTaskArea,
@@ -109,7 +203,32 @@
 </head>
 
 <body>
-  <div class="list" title="TODO LIST">
+  <main id="main-holder">
+    <h1 id="login-header">Login</h1>
+
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit">
+    </form>
+
+  </main>
+  <div id='auth'>
+    <form id='authUser'>
+      <textarea id='user' class='newTaskArea'>
+      </textarea>
+      <br>
+      <textarea id='password' class='newTaskArea'>
+      </textarea>
+      <div id='login' class='saveList'> LOGIN
+      </div>
+    </form>
+  </div>
+  <div id='listarea' class="list" title="TODO LIST">
     <div class='listName'>
       <label id='defaultListName' class="listName"> - TODO - </label>
       <textarea id='userListName' class="listName"> - TODO - </textarea>
@@ -124,22 +243,46 @@
 </body>
 <script>
 
-  // addTask.addEventListener('mouseDown', typeTask)
-  // function typeTask() {
-  //   //typing
-  // }
+  document.addEventListener('DOMContentLoaded', loadUserData)
+
+  const users = []
+
+  const loginForm = document.getElementById("login-form");
+  const loginButton = document.getElementById("login-form-submit");
+  const loginErrorMsg = document.getElementById("login-error-msg");
+  loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+
+    if (username === "user" && password === "web_dev") {
+      alert("You have successfully logged in.");
+      location.reload();
+    } else {
+      loginErrorMsg.style.opacity = 1;
+    }
+  })
+
 
   var id = 0
   var singleTask = { text: '', status: true }
   var allTasks = []
-  const list = { name: '', tasks }
+  //const list = { name: '', tasks }
 
+  //@TODO: get user from local storage
+  var lists = []
+  var user = { 'username': 'dan', 'password': 'ppp11122', 'lists': [] }
+  //@TODO: get from local storage
+  var login = document.getElementById('login')
   var typingArea = document.getElementById('typingArea')
   var defaultListName = document.getElementById('defaultListName')
   var userListName = document.getElementById('userListName')
   var saveList = document.getElementById('save')
   // var addNewTask = document.getElementById('addTask')
   // addNewTask.disabled = true
+
+  login.addEventListener('click', authenticate)
   typingArea.addEventListener('keyup', doneTyping)
   typingArea.addEventListener('keypress', (e) => {
     console.log(e)
@@ -167,6 +310,21 @@
     e.target.style.border = 'none'
     e.target.style.backgroundColor = 'springgreen'
   })
+
+
+
+  function authenticate() {
+    var autharea = document.getElementById('auth')
+    autharea.style.display = 'none'
+    var listarea = document.getElementById('listarea')
+    listarea.style.display = 'block'
+    // document.on('')
+  }
+
+  function loadUserData() {
+    getFromLocalStorage()
+  }
+
   function doneTyping(e) {
     //@TODO add timer!!!
     // if (e.target.value && e.target.value.trim().length > 0) {
@@ -187,7 +345,7 @@
     task.textContent = typingArea.value
     task.appendChild(done)
     tasks.appendChild(task).append(document.createElement('br'))
-    allTasks.push({ id: task.id, task: typingArea.value, status: done.checked })
+    allTasks.push({ 'id': task.id, 'task': typingArea.value, 'status': done.checked })
     typingArea.value = ''
     // addNewTask.disabled = true
   }
@@ -213,6 +371,8 @@
       allTasks[i].done = element
     }
     console.log(allTasks)
+    var userListName = document.getElementById('userListName')
+    saveListToLocalStorage(allTasks, userListName)
 
     //@TODO: save to file json  
     //@TODO: solve this
@@ -220,6 +380,38 @@
     // tasks.forEach(task => {
     //   console.log(task)
     // });
+  }
+  // addTask.addEventListener('mouseDown', typeTask)
+  // function typeTask() {
+  //   //typing
+  // }
+
+  function saveListToLocalStorage(list, name) {
+    var users = JSON.parse(localStorage.getItem('users'))
+
+    lists.push({ 'name': name, 'list': list })
+    user['lists'].push(lists)
+
+    console.log(users)
+    users.push(user)
+
+
+    var ind = users.findIndex(i => i.username == 'dan')
+    users[ind].lists.push(list)
+
+    console.log('users')
+    console.log(ind)
+
+    localStorage.setItem('users', JSON.stringify(users))
+
+    // localStorage.setItem('user', JSON.stringify(user))
+    var data = localStorage.getItem('users')
+    console.log(JSON.parse(data))
+  }
+
+  function getFromLocalStorage() {
+    var users = localStorage.getItem('users')
+    console.log(JSON.parse(users))
   }
 
 </script>
