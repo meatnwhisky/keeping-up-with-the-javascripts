@@ -1,8 +1,11 @@
 var count = 0
-var m1, m2, m3, m4, m5, m6
+var managerId
+var busiestManager = 0
+var maxEmployees
 
+
+var m1, m2, m3, m4, m5, m6, managers = []
 async function createOrganization() {
-
 
     function Employee() {
         this.id = ''
@@ -66,19 +69,14 @@ async function createOrganization() {
     m3.employees.push(m5)
 
     m3.employees.forEach(emp => {
-        // if (emp.employees !== null)
-        //     console.log(`id: ${emp.id} -- employees ${emp.employees}`)
+        console.log(`id: ${emp.id} -- employees ${emp.employees}`)
     });
-    // console.log(m3.employees[0])
 
 
-
-    // var c = 0
-
-    // var ccc = await countEmployees(m3, c).then(
-    //     console.log(ccc))
-
+    managers = [m1, m2, m3]
 }
+
+
 
 async function countEmployees(E) {
     //employee
@@ -87,50 +85,40 @@ async function countEmployees(E) {
         console.log('\n return 0')
         return 0
     }
-    //manager
+
     else {
-        //    console.log('length:' + E.employees.length)
+
         count += E.employees.length
 
         for (const ind in E.employees) {
 
             if (Object.hasOwnProperty.call(E.employees, ind)) {
                 const emp = E.employees[ind];
-                await countEmployees(emp)
-                // console.log('id:', emp.id, 'count:', count)
+                countEmployees(emp)
+
             }
             /*JavaScript does not protect the property name hasOwnProperty; thus, if the possibility exists that an object might have a property with this name, it is necessary to use an external hasOwnProperty to get correct results:*/
         }
 
     }
-    //doesnt work:
-    // else {
-    //     console.log('length:' + E.employees.length)
-    //     count += E.employees.length
 
-    //     E.employees.forEach(async emp => {
-    //         console.log('id:', emp.id, 'count:', count)
-    //         await countEmployees(emp, count)
-    //     })
-    // }
 }
 
 
 createOrganization()
 
-countEmployees(m3, 0)
+var managers = [m4, m5]
 
-console.log(count)
+maxEmployees = 0
 
+managers.forEach(manager => {
+    count = 0
+    countEmployees(manager)
+    if (count > maxEmployees) {
+        maxEmployees = count
+        busiestManager = manager.id
+    }
+})
+console.log(`maxEmployees ${maxEmployees} | busiest manager id: ${busiestManager}`)
 
-//not necessary 
-
-// setTimeout(() => {
-//     countEmployees(m3, 0)
-// }, 5000);
-
-
-// setTimeout(() => {
-//     console.log(count)
-// }, 5000);
 
