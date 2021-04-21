@@ -2,7 +2,8 @@
 
 - [Binary Search](#binary-search)
 
-## Binary Search  [https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/]
+## [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
+
 
 
 
