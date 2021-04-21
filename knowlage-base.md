@@ -1,3 +1,11 @@
+# Resources
+
+- [Binary Search](#binary-search)
+
+## Binary Search  [https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/]
+
+
+
 # Node APIs List
 
 - [Global Objects](#global-objects)
