@@ -1,8 +1,7 @@
 # Resources
 
-- [Binary Search](#binary-search)
-
-## [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
+##[Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
+##[System Design](https://www.geeksforgeeks.org/5-common-system-design-concepts-for-interview-preparation/)
 
 
 
