@@ -2,7 +2,17 @@
 
 - [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
 - [System Design](https://www.geeksforgeeks.org/5-common-system-design-concepts-for-interview-preparation/)
+- [System Desihn Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
 
+|                              | Service Name                        |
+|------------------------------|-------------------------------------|
+|Latency                       |                                     |
+|Scalability                   |                                     |
+|Load Balancer                 | Nginx, Cisco, TP-Link, Barracuda, Citrix, Elastic Load Balancing from AWS|
+|Cahing Services               | Memcache, Redis, and Cassandra |
+|CDN(Content Delievery Network)| Cache static assets files like images, javascript, HTML, or CSS and it makes accessing very fast for the users. You can insert caching in on the client (e.g. browser storage), between the client and the server (e.g. CDNs), or on the server itself![image](https://user-images.githubusercontent.com/76406788/115685592-066e9e00-a361-11eb-9de5-80ac249b5cfc.png)|
+|Proxy                         | Typically proxies are used to handle requests, filter requests or log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compression). It helps in coordinating requests from multiple servers and it can be used to optimize request traffic from a system-wide perspective.|
+|Reversed Proxy| ‘Reverse proxies’ are the opposite of ‘forward proxy’. A reverse proxy acts on behalf of a server and it is designed to help servers.асто используют и анонимные прокси. И это не значит, что человек будет совершать какие-то противоправные действия. Таким образом пользователь повышает конфиденциальность и гарантирует дополнительную безопасность для информации, которую он будет передавать.|
 
 
 
