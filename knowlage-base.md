@@ -18,17 +18,20 @@
 
 ## Practice online
 - [jsBin](https://jsbin.com/)
-- 
 
 ## Algorithms
 - [GeeksForeGeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
 - [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
 
+## System Design Articles
+- [Medium - System Design: Distributed System](https://abegc.medium.com/system-design-distributed-system-cc0d399e4eca)
+- [Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
+
 
 ## System Design
-- [System Design Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
+1_n6LeHvAYh7DZMN5Lyu0TFQ.jpeg![Uploading image.png…]()
 
-|C=oncept                      | Descriotion                         |
+|Concept                      | Descriotion                         |
 |------------------------------|-------------------------------------|
 |Latency                       |                                     |
 |Scalability                   |                                     |
