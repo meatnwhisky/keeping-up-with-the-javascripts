@@ -31,11 +31,12 @@
 ## Summary
   |Concept                      | Descriotion                          |
   |------------------------------|-------------------------------------|
+  |Distributed System            |![image](https://user-images.githubusercontent.com/76406788/115845216-4c8f3480-a429-11eb-8b50-5310736ce571.png)
   |Latency                       |                                     |
   |Scalability                   |                                     |
   |Load Balancer                 | Nginx, Cisco, TP-Link, Barracuda, Citrix, Elastic Load Balancing from AWS|
   |Cahing Services               | Memcache, Redis, and Cassandra |
-  |CDN(Content Delievery Network)| Cache static assets files like images, javascript, HTML, or CSS and it makes accessing very fast for the users. You can insert caching in on the client (e.g. browser storage), between the client and the server (e.g. CDNs), or on the server itself![image](https://user-images.githubusercontent.com/76406788/115685592-066e9e00-a361-11eb-9de5-80ac249b5cfc.png)|
+  |CDN(Content Delievery Network)| Cache static assets files like images, javascript, HTML, or CSS and it makes accessing very fast for the users. You can insert   caching in on the client (e.g. browser storage), between the client and the server (e.g. CDNs), or on the server itself![image](https://user-images.githubusercontent.com/76406788/115685592-066e9e00-a361-11eb-9de5-80ac249b5cfc.png)|
   |Proxy                         | Typically proxies are used to handle requests, filter requests or log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compression). It helps in coordinating requests from multiple servers and it can be used to optimize request traffic from a system-wide perspective.|
   |Reversed Proxy                | ‘Reverse proxies’ are the opposite of ‘forward proxy’. A reverse proxy acts on behalf of a server and it is designed to help servers.|
   |CAP(Consistency Availability Partinion tolernce)| Consistency means that any read request will return the most recent write. Data consistency is usually “strong” for SQL databases and for NoSQL database consistency may be anything from “eventual” to “strong”.Availability means that a non-responding node must respond in a reasonable amount of time. Not every application needs to run 24/7 with 99.999% availability but most likely you will prefer a database with higher availability.Partition tolerance means the system will continue to operate despite network or node failures.|
