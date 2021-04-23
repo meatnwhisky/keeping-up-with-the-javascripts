@@ -1,11 +1,34 @@
 # Resources
 
-- [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
-- [System Design](https://www.geeksforgeeks.org/5-common-system-design-concepts-for-interview-preparation/)
-- [System Desihn Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
-- [Online Code Practice](https://practice.geeksforgeeks.org/problems/java-collections-set-7-linkedlist/1/?problemStatus=solved&page=1&query=problemStatussolvedpage1)
+## Channels
 
-|                              | Service Name                        |
+- [Владилен Минин](https://www.youtube.com/channel/UCg8ss4xW9jASrqWGP30jXiw)
+- [Kyle Simpson](https://www.youtube.com/watch?v=UJpg0EuhGcg&t=15s)
+- [TheCodeingTrain](https://www.youtube.com/c/TheCodingTrain/playlists)
+- [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw)
+- [Samer Buna](https://www.youtube.com/channel/UCL3-q0dF1snVBCsezOXd4rw)
+
+## Learn to Code
+- [Programiz](https://www.programiz.com/javascript/ES6)
+- [Logicomo](https://www.logicmojo.com/tips)
+- [Educative](https://www.educative.io/?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=brand)
+- [LeetCode](https://leetcode.com/)
+- [Online Code Practice](https://practice.geeksforgeeks.org/problems/java-collections-set-7-linkedlist/1/?problemStatus=solved&page=1&query=problemStatussolvedpage1)
+- [Pirple](https://www.pirple.com/courses/take/keeping-up-with-the-javascripts-part-1/assignments/9455653-project-2)
+
+## Practice online
+- [jsBin](https://jsbin.com/)
+- 
+
+## Algorithms
+- [GeeksForeGeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
+- [Binary Search](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
+
+
+## System Design
+- [System Design Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
+
+|C=oncept                      | Descriotion                         |
 |------------------------------|-------------------------------------|
 |Latency                       |                                     |
 |Scalability                   |                                     |
@@ -15,11 +38,7 @@
 |Proxy                         | Typically proxies are used to handle requests, filter requests or log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compression). It helps in coordinating requests from multiple servers and it can be used to optimize request traffic from a system-wide perspective.|
 |Reversed Proxy                | ‘Reverse proxies’ are the opposite of ‘forward proxy’. A reverse proxy acts on behalf of a server and it is designed to help servers.|
 |CAP(Consistency Availability Partinion tolernce)| Consistency means that any read request will return the most recent write. Data consistency is usually “strong” for SQL databases and for NoSQL database consistency may be anything from “eventual” to “strong”.Availability means that a non-responding node must respond in a reasonable amount of time. Not every application needs to run 24/7 with 99.999% availability but most likely you will prefer a database with higher availability.Partition tolerance means the system will continue to operate despite network or node failures.|
-
-|DataBase|------|
-|Indexing|------|
-|Replication                   |Solves the availability issue in your system and ensures the redundancy in the database if one goes down. You created the replica (slave) of your database but how would you pull the data from the original (master) database? how would you synchronize the data across the replicas, since they’re meant to have the same data? 
-You can choose synchronous (at the same time as the changes to the main database) or asynchronous approach depending on your needs. If it’s asynchronous then you may have to accept some inconsistent data because changes in the master database may not reflect in slave before it crashes. If you need state between the two databases to be consistent then the replication needs to be rapid and you can go with synchronous approach. You also need to ensure that if the write operation to the replica fails, the write operation to the main database also fails (atomicity).|
+|DataBase Replication          | Solves the availability issue in your system and ensures the redundancy in the database if one goes down. You created the replica (slave) of your database but how would you pull the data from the original (master) database? how would you synchronize the data across the replicas, since they’re meant to have the same data? You can choose synchronous (at the same time as the changes to the main database) or asynchronous approach depending on your needs. If it’s asynchronous then you may have to accept some inconsistent data because changes in the master database may not reflect in slave before it crashes. If you need state between the two databases to be consistent then the replication needs to be rapid and you can go with synchronous approach. You also need to ensure that if the write operation to the replica fails, the write operation to the main database also fails (atomicity).|
 
 # Node APIs List
 
