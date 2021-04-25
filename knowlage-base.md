@@ -46,7 +46,9 @@
   |DataBase Replication          | Solves the availability issue in your system and ensures the redundancy in the database if one goes down. You created the replica (slave) of your database but how would you pull the data from the original (master) database? how would you synchronize the data across the replicas, since they’re meant to have the same data? You can choose synchronous (at the same time as the changes to the main database) or asynchronous approach depending on your needs. If it’s asynchronous then you may have to accept some inconsistent data because changes in the master database may not reflect in slave before it crashes. If you need state between the two databases to be consistent then the replication needs to be rapid and you can go with synchronous approach. You also need to ensure that if the write operation to the replica fails, the write operation to the main database also fails (atomicity).|
 
 ## Interview Prep
--[All](https://www.fullstack.cafe/interview-questions/javascript)
+- [All](https://www.fullstack.cafe/interview-questions/javascript)
+- [3 Month Coding Interview Preparation Bootcamp](https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/)
+
 
 # Node APIs List
 - [Global Objects](#global-objects)
