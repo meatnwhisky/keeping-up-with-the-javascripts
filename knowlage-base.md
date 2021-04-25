@@ -45,8 +45,10 @@
   |CAP(Consistency Availability Partinion tolernce)| Consistency means that any read request will return the most recent write. Data consistency is usually “strong” for SQL databases and for NoSQL database consistency may be anything from “eventual” to “strong”.Availability means that a non-responding node must respond in a reasonable amount of time. Not every application needs to run 24/7 with 99.999% availability but most likely you will prefer a database with higher availability.Partition tolerance means the system will continue to operate despite network or node failures.|
   |DataBase Replication          | Solves the availability issue in your system and ensures the redundancy in the database if one goes down. You created the replica (slave) of your database but how would you pull the data from the original (master) database? how would you synchronize the data across the replicas, since they’re meant to have the same data? You can choose synchronous (at the same time as the changes to the main database) or asynchronous approach depending on your needs. If it’s asynchronous then you may have to accept some inconsistent data because changes in the master database may not reflect in slave before it crashes. If you need state between the two databases to be consistent then the replication needs to be rapid and you can go with synchronous approach. You also need to ensure that if the write operation to the replica fails, the write operation to the main database also fails (atomicity).|
 
-# Node APIs List
+## Interview Prep
+-[All](https://www.fullstack.cafe/interview-questions/javascript)
 
+# Node APIs List
 - [Global Objects](#global-objects)
 - [Console](#console)
 - [Timers](#timers)
