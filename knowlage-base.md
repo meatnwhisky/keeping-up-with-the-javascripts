@@ -24,6 +24,9 @@
 - + Binary Search
     + [Implementation of Binary Search Tree in Javascript](https://www.geeksforgeeks.org/implementation-binary-search-tree-javascript/)
 
+## Data Structures 
+- [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
+
 ## System Design Articles
 - [Medium - System Design: Distributed System](https://abegc.medium.com/system-design-distributed-system-cc0d399e4eca)
 - [Interview](https://www.geeksforgeeks.org/how-to-crack-system-design-round-in-interviews/)
