@@ -26,6 +26,9 @@
 
 ## Data Structures 
 - [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
+- [Hash Tbl]
+- + Tutorial (https://www.youtube.com/watch?v=KyUTuwz_b7Q)
+- + Implementation Tutorial (https://www.youtube.com/watch?v=F95z5Wxd9ks)
 
 ## System Design Articles
 - [Medium - System Design: Distributed System](https://abegc.medium.com/system-design-distributed-system-cc0d399e4eca)
